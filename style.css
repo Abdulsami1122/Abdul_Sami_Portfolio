@@ -22,13 +22,15 @@ body{
    
 }
 .logo{
+    animation: logoAnimation 2s ;
     font-size: 30px;
-    color: #fff;
+    color: rgb(88, 11, 11);
     padding: 3px 15px;
-    border: 3px solid #fff;
+    border: 3px solid rgb(88, 11, 11);
     border-radius: 50px;
     text-decoration: none;
     box-shadow: 2px 2px 4px ;
+
 }
 .header .navbar a{
 padding: 5px;
@@ -51,9 +53,10 @@ padding: 5px;
     height: 100vh;
     align-items: center;
     padding: 0 10%;
+    
 }
-.home-content{
-  
+.home-content {
+  animation: home-contentAnimation 2s ease-out;
     max-width: 600px;
 }
 
@@ -96,7 +99,6 @@ padding: 5px;
     font-weight: 600;
     letter-spacing: 1px;
     z-index: -1;
-    top: 5px;
     overflow: hidden;
     transition: .5s;
 }
@@ -118,7 +120,6 @@ padding: 5px;
 }
 
 .btn-box a::before{
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -155,7 +156,7 @@ padding: 5px;
     text-decoration: none;
     z-index: 1;
     overflow: hidden;
-    transition: .5;
+    transition: 5;
 }
 .home-sci a:hover{
     color: #081b29;
@@ -175,7 +176,6 @@ padding: 5px;
 
 .home-sci a:hover::before{
     width: 100%;
-
 }
 footer{
     background-color: #081b29;
@@ -184,8 +184,42 @@ footer{
     color: #fff;
     font-size: 20px;
 }
-/* Tablet layout (max-width: 768px) */
-@media (max-width: 768px) {
+@keyframes logoAnimation{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes home-contentAnimation{
+    0%{
+        transform: translatex(-100px);
+        opacity: 0;    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+img{
+animation: imgAnimation 3s  ;
+}
+@keyframes imgAnimation{
+    0%{
+        transform: translatex(100px);
+        opacity: 0;    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Tablet layout (max-width: ) */
+@media (max-width: 500px) {
     .header {
       flex-direction: column;
     }
@@ -214,10 +248,11 @@ footer{
       padding-top: 130px;
     }
   
-    .home img {
+    img {
       width: 100%;
       padding-left: 0;
       margin-top: 20px;
+      padding-right: 70px;
     }
   
     .home-sci {
@@ -229,7 +264,8 @@ footer{
     }
     footer{
         width: 100%;
-        padding-top: 300px;
+        padding-top: 450px;
+      
     }
   }
   
